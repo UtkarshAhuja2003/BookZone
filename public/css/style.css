@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 12px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+nav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: #231955;
+    height: 5rem;
+    width: 100%;
+}
+label.logo{
+    color: white;
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 5rem;
+    padding: 0 4rem;
+    cursor: pointer;
+}
+
+nav ul{
+    float: right;
+    margin-right: 2rem;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 5rem;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.7rem;
+}
+#nav a:hover{
+    background-color: #5800FF;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+
+}
+.checkbtn{
+    font-size: 1.6rem;
+    color: white;
+    float: right;
+    line-height: 5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width: 952px){
+    label.logo{
+        font-size: 2rem;
+        padding: 0 2rem;
+    }
+    nav ul li a{
+        font-size: 1rem;
+        padding: 0.1rem 0.3rem;
+    }
+}
+@media(max-width: 852px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 5rem;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav ul li a{
+        font-size: 0.9rem;
+    }
+    a:hover{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked~ul{
+        left: 0;
+    }
+}
+body{
+    background-image: url(https://i.pinimg.com/564x/bd/46/8d/bd468dd0fc8520c030bd66416ab17597.jpg);
+}
+
+main{
+    max-width: 50rem;
+    margin: 8rem auto;
+    padding: 3rem 1.6rem 6rem 1.6rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    /*box-shadow: 0 10rem 10rem lightgrey;
+    background: linear-gradient(30deg ,#9BA3EB, #1363DF)*/
+}
+h1{
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 2rem;
+}
+label{
+    font-size: 1.5rem;
+}
+.sameLine{
+    display: inline-flex;
+}
+span{
+    display: flex;
+    position: relative;
+    flex: 1;
+}
+input{
+    width: 95%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    padding: 4px;
+    font-size: 1.2rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    border-radius: 100%;
+}
+i{
+    position: absolute;
+    font-size: 25px;
+    color: black;
+    margin: 15px 8px 0 -45px;
+}
+div{
+    margin-top: 1rem;
+}
+input[type="submit"]{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: #3330E4;
+    color: white;
+    outline: none;
+    border: none;
+}
+input[type = "email"]{
+    width: 18.5rem;
+}
+.gender{
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.gender input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.gender:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.gender input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.gender:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.gender input:checked ~ .checkmark:after {
+    display: block;
+}
+.gender .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+section a{
+    margin: 0 auto;
+    color: #5800FF;
+    font-size: 1.5rem;
+    margin: 14rem;
+}
+section a:hover{
+    color: white;
+}
+.password{
+    margin-right: 0.5rem;
+    margin-left: 8rem;
+    width: 30rem;
+}

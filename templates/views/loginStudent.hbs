@@ -1,0 +1,28 @@
+{{>header}}
+{{>navbar}}
+
+    <main>
+        <img src="/images/login.jpeg" alt="">
+        <h1>Login as student</h1>
+        <form class="" action="/loginStudent" method="POST">
+        <section>
+            <div>
+                <label for="">Enrollment Number</label>
+                <input type="number" placeholder="10-digit" name="studentEnrollment" class="form-control" name="userenrollment">
+                <i class="fa-solid fa-envelope fa-2x"></i>
+            </div>
+            <div>
+                <label for="Password">Password</label>
+                <input type="password" placeholder="Password" class="form-control" name="studentpassword">
+                <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+            </div>
+            <div>
+                <input type="submit" value="Sign in">
+            </div>
+            <a href="registerStudent">Create new account?</a>
+        </section>
+        </form>
+    </main>
+
+
+{{>footer}}

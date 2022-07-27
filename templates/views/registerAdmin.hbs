@@ -1,0 +1,49 @@
+{{>header}}
+{{>navbar}}
+    <main>
+        <img src="images/login.jpeg" alt="">
+        <h1>Register as admin</h1>
+        <form action="/registerAdmin" method="POST">
+        <section>
+            <div class="sameLine">
+                <span>
+                    <input type="text" name="adminfirstname" placeholder="First Name">
+                </span>
+                <span>
+                    <input type="text" name="adminlastname" placeholder="Last Name">
+                </span>
+            </div>
+            <div>
+                    <input type="number" name="adminschoolid" placeholder="School Id">
+            </div>
+            <div>
+                <input type="email" placeholder="email@shool_name.com" name = "adminemail">
+            </div>
+            {{!-- <div>
+                <label class="gender">male
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="gender">female
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+            </div> --}}
+            <div class="sameLine">
+                <span>
+                    <input type="password" placeholder="Password*" name = "adminpassword">
+                </span>
+                <span>
+                    <input type="password" name="admincpassword" placeholder="Confirm Password*">
+                </span>
+            </div>
+            <div>
+                <input type="submit" value="registerAdmin">
+            </div>
+            <a href="registerStudent">Log into existing account?</a>
+        </section>
+        </form>
+    </main>
+
+
+{{>footer}}

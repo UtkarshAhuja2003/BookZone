@@ -1,0 +1,63 @@
+{{>header}}
+{{>navbar}}
+
+    <main>
+        <img src="images/login.jpeg" alt="">
+        <h1>Register as student</h1>
+        <section>
+            <div class="sameLine">
+              <form action="/registerStudent" method="POST">
+                <div class="sameLine">
+                    <span>
+                        <input type="text" name="studentfirstname" placeholder="First Name">
+                    </span>
+                    <span>
+                        <input type="text" name="studentlastname" placeholder="Last Name">
+                    </span>
+                <span style="padding-top: 10px;">
+                    <label class="gender"  style="margin-right: 1rem;">Male
+                        <input type="radio" name="gender">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="gender">Female
+                        <input type="radio" name="gender">
+                        <span class="checkmark"></span>
+                    </label>
+                </span>
+                </div>
+                <div class="sameLine">
+                    <span>
+                        <input type="number" class="form-control" name="studentEnrollment" placeholder="Enrollment number">
+                    </span>
+                    <span>
+                        <input type="number" name="studentage" placeholder="Age" >
+                    </span>
+                </div>
+                <div class="sameLine form-group">
+                    <span>
+                        <input type="email" class="form-control" name="studentemail" placeholder="Your email">
+                    </span>
+                </div>
+                <div class="password sameLine form-group">
+                    <span>
+                        <input type="password" class="form-control" name="studentpassword" placeholder="Password*">
+                    </span>
+                    <span>
+                        <input type="password" name="studentcpassword" placeholder="Confirm Password*">
+                    </span>
+                </div>
+                <div>
+                    <input type="submit" value="registerStudent">
+                </div>
+                <div>
+                    <a href="loginStudent">Login?</a>
+                </div>
+              </form>
+
+            <div>
+
+
+        </section>
+    </main>
+
+{{>footer}}
