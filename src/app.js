@@ -5,7 +5,8 @@ const path=require("path")
 const hbs=require("hbs")
 const bcrypt=require("bcryptjs")
 const cookieParser=require("cookie-parser")
-const auth=require("./middleware/auth")
+const adminauth=require("./middleware/adminauth")
+const studentauth=require("./middleware/studentauth")
 
 require("./db/conn")
 const Admin=require("./models/admin")
@@ -31,12 +32,12 @@ app.get("/",(req,res)=>{
    res.render("index")
 })
 
-app.get("/secret",auth,(req,res)=>{
+app.get("/secret",adminauth,(req,res)=>{
    // console.log(`this is cookie  ${req.cookies.jwt}`);
     res.render("secret")
 })
 
-app.get("/logout",auth,async(req,res)=>{
+app.get("/logout",adminauth,async(req,res)=>{
     try {
         req.user.tokens=req.user.tokens.filter((elem)=>{
             return elem.token!=req.token
@@ -51,6 +52,26 @@ app.get("/logout",auth,async(req,res)=>{
     }
 })
 
+app.get("/secretstudent",studentauth,(req,res)=>{
+    // console.log(`this is cookie  ${req.cookies.jwt}`);
+     res.render("secretstudent")
+ })
+ 
+ app.get("/logoutstudent",studentauth,async(req,res)=>{
+     try {
+         req.user.tokens=req.user.tokens.filter((elem)=>{
+             return elem.token!=req.token
+         })
+ 
+         res.clearCookie("jwt")
+         console.log("logout done");
+         await req.user.save()
+         res.render("login")
+     } catch (error) {
+         res.status(500).send(error)
+     }
+ })
+
 app.get("/loginStudent",(req,res)=>{
     res.render("loginStudent")
 })
@@ -62,7 +83,7 @@ app.post("/loginStudent",async(req,res)=>{
 
        const id=await Student.findOne({studentEnrollment:studentid})
 
-       const token=await id.generateAuthTokenAdmin()
+       const token=await id.generateAuthTokenStudent()
        res.cookie("jwt",token,{
         expires:new Date(Date.now()+3000000),
         httpOnly:true
@@ -77,6 +98,7 @@ app.post("/loginStudent",async(req,res)=>{
        }
     } 
     catch(error){
+        console.log(error)
         res.status(400).send("invalid login details")
     }
 })
