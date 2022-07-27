@@ -48,11 +48,12 @@ const studentSchema=new mongoose.Schema({
 
 studentSchema.methods.generateAuthTokenStudent=async function(){
     try{
-        console.log(this._id);
-        const token= jwt.sign({_id:this._id.toString()},process.env.ADMIN_SECRET_KEY)
-        this.tokens=this.tokens.concat({token:token})
-        await this.save()
-        console.log("hello");
+        const user=this
+        console.log(user._id);
+        const token= jwt.sign({_id:user._id.toString()},process.env.ADMIN_SECRET_KEY)
+        user.tokens=user.tokens.concat({token})
+        await user.save()
+        // console.log("hello");
         return token
     }
     catch(error){
