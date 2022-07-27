@@ -52,9 +52,11 @@ app.get("/logout",adminauth,async(req,res)=>{
     }
 })
 
-app.get("/secretstudent",studentauth,(req,res)=>{
+app.get("/studentprofile",studentauth,(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
-     res.render("secretstudent")
+    
+     res.render("studentprofile")
+
  })
  
  app.get("/logoutstudent",studentauth,async(req,res)=>{
@@ -206,6 +208,10 @@ app.post("/registerAdmin",async(req,res)=>{
         res.status(400).send(error)
     }
 })
+
+
+
+
 
 app.listen(port,()=>{
     console.log("server is running ");

@@ -240,3 +240,73 @@ section a:hover{
     margin-left: 8rem;
     width: 30rem;
 }
+.container{
+    margin: 8rem 4rem;
+    display: flex;
+}
+.sideBar{
+    flex: 1;
+    background-color: #A5C9CA;
+    margin-right: 3rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 35rem;
+}
+.profile{
+    margin-top: 2rem;
+}
+.info{
+    flex: 2;
+}
+.record1{
+    background-color: #A5C9CA;
+    min-height: 35rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.record2{
+    background-color: #A5C9CA;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow: visible;
+    min-height: 35rem;
+}
+.row1{
+    display: flex;
+    margin-right: 5px;
+}
+.col1{
+    flex: 1;
+}
+.col2{
+    flex: 1;
+}
+.col3{
+    flex: 1;
+}
+.col4{
+    flex: 1;
+}
+.col{
+    text-align: center;
+}
+.title{
+    font-size: 1.2rem;
+}
+.row2{;
+    border-radius: 1rem;
+}
+.profile{
+    text-align: center;
+    font-size: 1.4rem;
+}
+.heading{
+    font-size: 2rem;
+    text-align: center;
+}
+.total{
+    text-align: right;
+    margin-right: rem;
+    padding: 0.5rem;
+    padding-right: 3rem;
+}

@@ -1,11 +1,11 @@
 const jwt=require("jsonwebtoken")
 
-const Admin=require("../models/student")
+const Student=require("../models/student")
 
 const auth=async(req,res,next)=>{
      try {
           const token =req.cookies.jwt
-          const verifyStudent=jwt.verify(token,process.env.STUDENT_SECRET_KEY)
+          const verifyStudent=jwt.verify(token,process.env.ADMIN_SECRET_KEY)
           const user=await Student.findOne({_id:verifyStudent._id})
           
           req.token=token
@@ -13,6 +13,7 @@ const auth=async(req,res,next)=>{
 
           next()
      } catch (error) {
+          console.log(error);
         res.status(401).send(error)
      }
 }
