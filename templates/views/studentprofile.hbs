@@ -5,11 +5,11 @@
     <div class="container">
         <div class="sideBar">
             <img src="https://i.ibb.co/txHV3T8/login.jpg" alt="login">
-            <div class="profile name" id="studentname"></div>
-            <div class="profile">email@gmail.com</div>
-            <div class="profile enroll">Enrollment</div>
-            <div class="profile Sname">School Name</div>
-            <div class="profile issued">Books Issued:</div>
+            <div class="profile name" id="studentname">{{name}}</div>
+            <div class="profile">{{email}}</div>
+            <div class="profile enroll">Enrollment ID: {{enrollment}}</div>
+            <div class="profile Sname">School Name: {{studentschoolname}}</div>
+            
         </div>
         <div class="info">
             <div class="record1">
@@ -18,8 +18,8 @@
                 <div class="row1">
                     <div class="col col1">
                         <div class="title">BOOK NAME</div>
-                        <div class="issued">book1</div>
-                        <div class="issued">book1</div>
+                        <div class="issued">{{book1name}}</div>
+                        <div class="issued">{{book2name}}</div>
                         <div class="issued">book1</div>
                         <div class="issued">book1</div>
                         <div class="issued">book1</div>
@@ -27,9 +27,13 @@
                     </div>
                     <div class="col col2">
                         <div class="title">ISSUED DATE</div>
+                         <div class="issued">{{book1issuedate}}</div>
+                        <div class="issued">{{book2issuedate}}</div>
                     </div>
                     <div class="col col3">
                         <div class="title">RETURN DATE</div>
+                         <div class="issued">{{book1returndate}}</div>
+                        <div class="issued">{{book2returndate}}</div>
                     </div>
                 </div>
             </div>

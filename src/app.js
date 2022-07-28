@@ -58,11 +58,19 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
     const token=req.user.tokens
     const id=await Student.findOne({token:token})
-    document.getElementById("studentname").innerHTML=id.studentfirstname
+    const firstname=id.studentfirstname
+    const lastname=id.studentlastname
+    const fullname=firstname+" "+lastname
     // const studentprofile=new('studentprofile')
     // studentprofile.querySelector('studentname').innerHTML=id.studentfirstname
-    console.log(id.studentfirstname);
-     res.render("studentprofile")
+    // console.log(id.studentfirstname);
+     res.render("studentprofile",{
+        name:fullname,
+        email:id.studentemail,
+        enrollment:id.studentEnrollment,
+        studentschoolname:id.studentschoolname,
+        book1name:id.books[0]
+     })
 
  })
  
@@ -161,6 +169,7 @@ app.post("/registerStudent",async(req,res)=>{
                 studentEnrollment:req.body.studentEnrollment,
                 studentage:req.body.studentage,
                 studentemail:req.body.studentemail,
+                studentschoolname:req.body.studentschoolname,
                 studentpassword,
                 studentcpassword
              })

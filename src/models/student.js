@@ -46,17 +46,20 @@ const studentSchema=new mongoose.Schema({
          book:[{
             bookname:{
                 type:String,
-                
             },
             issuedate:{
-                type:Date,
+                type:String,
                
             },
             datereturned:{
-                type:Date
+                type:String
             }
          }]
-    }]
+    }],
+    studentschoolname:{
+        type:String,
+        required:true
+    }
 })
 
 
