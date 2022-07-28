@@ -58,6 +58,7 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
     const token=req.user.tokens
     const id=await Student.findOne({token:token})
+    document.getElementById("studentname").innerHTML=id.studentfirstname
     // const studentprofile=new('studentprofile')
     // studentprofile.querySelector('studentname').innerHTML=id.studentfirstname
     console.log(id.studentfirstname);
