@@ -48,7 +48,7 @@ app.get("/logout",adminauth,async(req,res)=>{
         res.clearCookie("jwt")
         console.log("logout done");
         await req.user.save()
-        res.render("login")
+        res.render("index")
     } catch (error) {
         res.status(500).send(error)
     }
@@ -71,19 +71,32 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         studentschoolname:id.studentschoolname,
         book1name:id.books[0]
      })
-
  })
- 
+
+ app.get("/adminProfile",adminauth,async(req,res)=>{
+   const token=req.user.tokens
+   const id=await Admin.findOne({token:token})
+   const firstname=id.adminfirstname
+   const lastname=id.adminlastname
+   const fullname=firstname+" "+lastname
+    res.render("adminProfile",{
+       name:fullname,
+       email:id.adminemail,
+       adminschoolid:id.adminschoolid,
+       adminschoolname:id.adminschoolname,
+    })
+})
+
  app.get("/logoutstudent",studentauth,async(req,res)=>{
      try {
          req.user.tokens=req.user.tokens.filter((elem)=>{
              return elem.token!=req.token
          })
- 
+
          res.clearCookie("jwt")
          console.log("logout done");
          await req.user.save()
-         res.render("login")
+         res.render("index")
      } catch (error) {
          res.status(500).send(error)
      }
@@ -113,7 +126,7 @@ app.post("/loginStudent",async(req,res)=>{
        else{
         res.send("Invalid login details")
        }
-    } 
+    }
     catch(error){
         console.log(error)
         res.status(400).send("invalid login details")
@@ -129,11 +142,11 @@ app.post("/loginAdmin",async(req,res)=>{
        const adminid=req.body.adminschoolid
        const adminemail=req.body.adminemail
        const adminpassword=req.body.adminpassword
-       
+
        const email=await Admin.findOne({adminemail:adminemail})
 
        const id=await Admin.findOne({adminschoolid:adminid})
-       
+
        const token=await id.generateAuthTokenAdmin()
        res.cookie("jwt",token,{
         expires:new Date(Date.now()+3000000),
@@ -147,7 +160,7 @@ app.post("/loginAdmin",async(req,res)=>{
        else{
         res.send("Invalid login details")
        }
-    } 
+    }
     catch(error){
         res.status(400).send("invalid login details")
     }
@@ -173,9 +186,9 @@ app.post("/registerStudent",async(req,res)=>{
                 studentpassword,
                 studentcpassword
              })
-             
+
              const token=await registerStudent.generateAuthTokenStudent()
-              
+
              res.cookie("jwt",token,{
                 expires:new Date(Date.now()+3000000),
                 httpOnly:true
@@ -204,10 +217,11 @@ app.post("/registerAdmin",async(req,res)=>{
                 adminlastname:req.body.adminlastname,
                 adminschoolid:req.body.adminschoolid,
                 adminemail:req.body.adminemail,
+                adminschoolname:req.body.adminschoolname,
                 adminpassword,
                 admincpassword
              })
-             
+
              const token=await registerAdmin.generateAuthTokenAdmin()
              res.cookie("jwt",token,{
                 expires:new Date(Date.now()+3000000),

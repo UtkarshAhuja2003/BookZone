@@ -104,8 +104,9 @@ a:hover{
 .studentLogin{
     margin-right: 3rem;
 }
-a .logo {
-    background-color: none;
+.logo:hover {
+    background-color: #231955;
+    cursor: pointer;
 }
 main{
     max-width: 50rem;
@@ -244,13 +245,24 @@ section a:hover{
     margin: 8rem 4rem;
     display: flex;
 }
+.container2{
+    margin: 8rem 4rem;
+}
 .sideBar{
     flex: 1;
-    background-color: #A5C9CA;
+    background-color: #EEEEEE;
     margin-right: 3rem;
     border-radius: 1rem;
     padding: 2rem;
-    height: 35rem;
+    min-height: 30rem;
+    max-height: 35rem;
+}
+.adminSideBar{
+    flex: 1;
+    background-color: #EEEEEE;
+    margin-right: 3rem;
+    border-radius: 1rem;
+    padding: 2rem;
 }
 .profile{
     margin-top: 2rem;
@@ -259,13 +271,13 @@ section a:hover{
     flex: 2;
 }
 .record1{
-    background-color: #A5C9CA;
+    background-color: #EEEEEE;
     min-height: 35rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 .record2{
-    background-color: #A5C9CA;
+    background-color: #EEEEEE;
     border-radius: 1rem;
     padding: 2rem;
     overflow: visible;
@@ -287,13 +299,23 @@ section a:hover{
 .col4{
     flex: 1;
 }
+.Id{
+    flex: 1;
+}
+.Name{
+    flex: 2;
+}
+.Quantity{
+    flex: 1;
+}
 .col{
     text-align: center;
+    margin-bottom: 3rem;
 }
 .title{
     font-size: 1.2rem;
 }
-.row2{;
+.row2{
     border-radius: 1rem;
 }
 .profile{
@@ -309,4 +331,51 @@ section a:hover{
     margin-right: rem;
     padding: 0.5rem;
     padding-right: 3rem;
+}
+.bookUpload{
+    margin-top: -0.05%;
+    background-color: #EEEEEE;
+    min-height: 30rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.booksWithSchool{
+    background-color: #EEEEEE;
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 20rem;
+}
+.booksIssued{
+    margin: 8rem 4rem;
+    background-color: #EEEEEE;
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 20rem;
+}
+.submit{
+    text-align: center;
+}
+.submitB{
+    text-align: center;
+    background-color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 10px;
+    color: #576F72;
+    border: 2px solid #576F72;
+    border-radius: 0.5rem;
+}
+.submitB:hover{
+    color: white;
+    background-color: #576F72;
+}
+.bookImage{
+    padding-top: 2.5rem;
+    border-radius: 1rem;
+    background-color: #576F72;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 30%;
+    height: 10rem;
 }

@@ -1,0 +1,96 @@
+{{>header}}
+
+{{>navbar}}
+
+<body style="background-color: #C8C6C6; color: #576F72;">
+
+  <section class="studentProfile">
+      <div class="container">
+          <div class="adminSideBar">
+              <img src="images/login.jpeg" alt="">
+              <div class="profile name">{{name}}</div>
+              <div class="profile emailId">{{email}}</div>
+              <div class="profile enroll">{{adminschoolid}}</div>
+              <div class="profile Sname">{{adminschoolname}}</div>
+          </div>
+          <div class="info">
+              <div class="bookUpload">
+                  <div class="heading">Upload New Book</div>
+                  <hr style="border-top: 3px solid #2C3333;">
+                  <div class="row1">
+                      <div class="col col1">
+                          <div class="title">BOOK NAME</div>
+                          <input type="text" placeholder="Book Name">
+                      </div>
+                      <div class="col col2">
+                          <div class="title">BOOK ID</div>
+                          <input type="number" placeholder="Book Id">
+                      </div>
+                      <div class="col col3">
+                          <div class="title">SCHOOL ID</div>
+                          <input type="number" placeholder="School Id">
+                      </div>
+                      <div class="col col4">
+                          <div class="title">QUANTITY</div>
+                          <input type="number" placeholder="Quantity">
+                      </div>
+                  </div>
+                  <div class="bookImage">
+                      <input type="file" >
+                  </div>
+                  <div class="submit">
+                      <button class="submitB">Upload Book</button>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="container2">
+          <div class="booksWithSchool">
+              <div class="row2">
+                  <div class="heading">BOOKS WITH INSTITUTE</div>
+                  <hr style="border-top: 3px solid #2C3333;">
+                  <div class="row1">
+                      <div class="col Id">
+                          <div class="title">BOOK Id</div>
+                      </div>
+                      <div class="col Name">
+                          <div class="title">Book Name</div>
+                      </div>
+                      <div class="col Quantity">
+                          <div class="title">Quantity</div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="booksIssued">
+              <div class="row2">
+                  <div class="heading">BOOKS ISSUED</div>
+                  <hr style="border-top: 3px solid #2C3333;">
+                  <div class="row1">
+                      <div class="col Id">
+                          <div class="title">Student Id</div>
+                      </div>
+                      <div class="col col1">
+                          <div class="title">Book Id</div>
+                      </div>
+                      <div class="col col2">
+                          <div class="title">Book Name</div>
+                      </div>
+                      <div class="col col3">
+                          <div class="title">Date Issued</div>
+                      </div>
+                      <div class="col col4">
+                          <div class="title">Date Returned</div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+</header>
+
+{{>footer}}

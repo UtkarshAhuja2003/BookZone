@@ -29,6 +29,10 @@ const adminSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    adminschoolname:{
+      type:String,
+      required:true,
+    },
     tokens:[{
         token:{
             type:String,
@@ -54,7 +58,7 @@ adminSchema.methods.generateAuthTokenAdmin=async function(){
 
 
 adminSchema.pre("save",async function (next){
-    
+
     if(this.isModified("adminpassword")){
         this.adminpassword=await bcrypt.hash(this.adminpassword,5)
         this.admincpassword=await bcrypt.hash(this.adminpassword,5)
