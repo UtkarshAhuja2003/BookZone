@@ -7,6 +7,8 @@ const bcrypt=require("bcryptjs")
 const cookieParser=require("cookie-parser")
 const adminauth=require("./middleware/adminauth")
 const studentauth=require("./middleware/studentauth")
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 require("./db/conn")
 const Admin=require("./models/admin")
@@ -52,9 +54,13 @@ app.get("/logout",adminauth,async(req,res)=>{
     }
 })
 
-app.get("/studentprofile",studentauth,(req,res)=>{
+app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
-    
+    const token=req.user.tokens
+    const id=await Student.findOne({token:token})
+    // const studentprofile=new('studentprofile')
+    // studentprofile.querySelector('studentname').innerHTML=id.studentfirstname
+    console.log(id.studentfirstname);
      res.render("studentprofile")
 
  })
