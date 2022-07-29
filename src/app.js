@@ -13,6 +13,7 @@ const { JSDOM } = jsdom;
 require("./db/conn")
 const Admin=require("./models/admin")
 const Student=require("./models/student")
+const Book=require("./models/books")
 const { json }=require("express")
 
 const port=process.env.PORT||3000
@@ -88,6 +89,25 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         adminschoolname:req.user.adminschoolname,
      })
  })
+
+app.post("/adminProfile", async(req, res)=>{
+  try {
+    const bookIssued = new Book({
+      studentid:req.body.bookStudentId,
+      bookid:req.body.studentBookId,
+      bookname:req.body.studentBookName,
+      dateIssued:req.body.studentDateIssued,
+      datereturned:req.body.studentDateReturned
+    });
+
+    const book = await bookIssued.save();
+
+    res.status(201).render("adminProfile");
+
+  } catch (e) {
+    console.log(e);
+  }
+})
 
  app.get("/logoutstudent",studentauth,async(req,res)=>{
      try {

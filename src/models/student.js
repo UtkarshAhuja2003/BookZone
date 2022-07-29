@@ -6,18 +6,18 @@ const jwt=require("jsonwebtoken")
 const studentSchema=new mongoose.Schema({
     studentfirstname:{
          type:String,
-         required:true
+         // required:true
     },
     studentlastname:{
         type:String,
-        required:true
+        // required:true
     },
     gender:{
        type:String
     },
     studentEnrollment:{
         type:Number,
-        required:true,
+        // required:truee
         unique:true
     },
     studentage:{
@@ -25,40 +25,43 @@ const studentSchema=new mongoose.Schema({
     },
     studentemail:{
         type:String,
-        required:true,
+        // required:truee
         unique:true
     },
     studentpassword:{
         type:String,
-        required:true,
+        // required:truee
     },
     studentcpassword:{
         type:String,
-        required:true,
+        // required:truee
     },
     tokens:[{
         token:{
             type:String,
-            required:true
+            // required:true
         }
     }],
-    books:[{
-         book:[{
-            bookname:{
-                type:String,
-            },
-            issuedate:{
-                type:String,
-               
-            },
-            datereturned:{
-                type:String
-            }
-         }]
+    student:[{
+      studentid:{
+        type:Number,
+      },
+      bookid:{
+        type:String,
+      },
+      bookname:{
+        type:String,
+      },
+      dateIssued:{
+        type:Date,
+      },
+      datereturned:{
+        type:Date,
+      }
     }],
     studentschoolname:{
         type:String,
-        required:true
+        // required:true
     }
 })
 
@@ -82,7 +85,7 @@ studentSchema.methods.generateAuthTokenStudent=async function(){
 
 
 studentSchema.pre("save",async function (next){
-    
+
     if(this.isModified("studentpassword")){
         this.studentpassword=await bcrypt.hash(this.studentpassword,5)
         this.studentcpassword=await bcrypt.hash(this.studentpassword,5)

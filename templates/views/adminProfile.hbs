@@ -46,7 +46,7 @@
 
       </div>
       <div class="container2">
-          <div class="booksWithSchool">
+          <!-- <div class="booksWithSchool">
               <div class="row2">
                   <div class="heading">BOOKS WITH INSTITUTE</div>
                   <hr style="border-top: 3px solid #2C3333;">
@@ -63,8 +63,8 @@
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="booksIssued">
+          </div> -->
+          <!-- <div class="booksIssued">
               <div class="row2">
                   <div class="heading">BOOKS ISSUED</div>
                   <hr style="border-top: 3px solid #2C3333;">
@@ -87,7 +87,43 @@
                       </div>
                   </div>
               </div>
-          </div>
+          </div> -->
+        <div class="booksIssued">
+          <form action="adminProfile" method="POST">
+            <div class="row2">
+                <div class="heading">STUDENT RECORD</div>
+                <hr style="border-top: 3px solid #2C3333;">
+                <div class="row1">
+                    <div class="col Id">
+                        <div class="title">Student Id</div>
+                        <input type="number" name="bookStudentId" placeholder="Student Id">
+                    </div>
+                    <div class="col col1">
+                        <div class="title">Book Id</div>
+                        <input type="number" name="studentBookId" placeholder="book Id">
+                    </div>
+                    <div class="col col2">
+                        <div class="title">Book Name</div>
+                        <input type="text" name="studentBookName" placeholder="book Name">
+                    </div>
+                    <div class="col col3">
+                        <div class="title">Date Issued</div>
+                        <input type="date" name="studentDateIssued" placeholder="Date Issued">
+                    </div>
+                    <div class="col col4">
+                        <div class="title">Date Returned</div>
+                        <input type="date" name="studentDateReturned" placeholder="Date Returned">
+                    </div>
+                    <div>
+                        <div>
+                          <button type="submit" value="adminProfile" name="button">submit</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
       </div>
   </section>
 
