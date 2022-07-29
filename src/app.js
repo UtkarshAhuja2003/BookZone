@@ -56,21 +56,23 @@ app.get("/logout",adminauth,async(req,res)=>{
 
 app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
-    const token=req.user.tokens
-    const id=await Student.findOne({token:token})
-    const firstname=id.studentfirstname
-    const lastname=id.studentlastname
+    // const token=req.user.studentfirstname
+    // // const id=await Student.findOne({token})
+    // console.log(`this is name ${token}`)
+    const firstname=req.user.studentfirstname
+    const lastname=req.user.studentlastname
     const fullname=firstname+" "+lastname
     // const studentprofile=new('studentprofile')
     // studentprofile.querySelector('studentname').innerHTML=id.studentfirstname
     // console.log(id.studentfirstname);
      res.render("studentprofile",{
         name:fullname,
-        email:id.studentemail,
-        enrollment:id.studentEnrollment,
-        studentschoolname:id.studentschoolname,
-        book1name:id.books[0]
+        email:req.user.studentemail,
+        enrollment:req.user.studentEnrollment,
+        studentschoolname:req.user.studentschoolname,
+        // book1name:id.books[0]
      })
+    // res.render("studentprofile")
  })
 
  app.get("/adminProfile",adminauth,async(req,res)=>{
