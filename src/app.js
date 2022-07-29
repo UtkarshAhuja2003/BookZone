@@ -60,6 +60,13 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     // const token=req.user.studentfirstname
     // // const id=await Student.findOne({token})
     // console.log(`this is name ${token}`)
+    const id1=req.user.studentEnrollment
+    const id=await Book.findOne({studentid:id1})
+   
+        for(let i=0;i<id.book.length;i++){
+            console.log(id.book[i].bookname)
+        }
+    
     const firstname=req.user.studentfirstname
     const lastname=req.user.studentlastname
     const fullname=firstname+" "+lastname
@@ -92,15 +99,18 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
 
 app.post("/adminProfile", async(req, res)=>{
   try {
+    const book1={
+        bookid:req.body.studentBookId,
+        bookname:req.body.studentBookName,
+        dateIssued:req.body.studentDateIssued,
+        datereturned:req.body.studentDateReturned
+    }
     const bookIssued = new Book({
       studentid:req.body.bookStudentId,
-      bookid:req.body.studentBookId,
-      bookname:req.body.studentBookName,
-      dateIssued:req.body.studentDateIssued,
-      datereturned:req.body.studentDateReturned
+      book:book1
     });
 
-    const book = await bookIssued.save();
+    const books = await bookIssued.save();
 
     res.status(201).render("adminProfile");
 

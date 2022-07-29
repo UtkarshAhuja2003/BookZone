@@ -7,18 +7,21 @@ const bookSchema=new mongoose.Schema({
       studentid:{
         type:Number,
       },
-      bookid:{
-        type:String,
-      },
-      bookname:{
-        type:String,
-      },
-      dateIssued:{
-        type:Date,
-      },
-      datereturned:{
-        type:Date,
-      }
+      book:[{
+        bookid:{
+          type:String,
+        },
+        bookname:{
+          type:String,
+        },
+        dateIssued:{
+          type:Date,
+        },
+        datereturned:{
+          type:Date,
+        }
+      }]
+      
 })
 
 const Book=new mongoose.model("Book",bookSchema)
