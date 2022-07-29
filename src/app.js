@@ -76,16 +76,16 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
  })
 
  app.get("/adminProfile",adminauth,async(req,res)=>{
-   const token=req.user.tokens
-   const id=await Admin.findOne({token:token})
-   const firstname=id.adminfirstname
-   const lastname=id.adminlastname
+   // const token=req.user.tokens
+   // const id=await Admin.findOne({token:token})
+   const firstname=req.user.adminfirstname
+   const lastname=req.user.adminlastname
    const fullname=firstname+" "+lastname
     res.render("adminProfile",{
        name:fullname,
-       email:id.adminemail,
-       adminschoolid:id.adminschoolid,
-       adminschoolname:id.adminschoolname,
+       email:req.user.adminemail,
+       adminschoolid:req.user.adminschoolid,
+       adminschoolname:req.user.adminschoolname,
     })
 })
 
