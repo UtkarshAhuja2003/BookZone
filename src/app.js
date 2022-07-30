@@ -63,9 +63,9 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
    
-        for(let i=0;i<id.book.length;i++){
-            console.log(id.book[i].bookname)
-        }
+        // for(let i=0;i<id.book.length;i++){
+        //     console.log(id.book[i].bookname)
+        // }
     
     const firstname=req.user.studentfirstname
     const lastname=req.user.studentlastname
