@@ -14,6 +14,7 @@ require("./db/conn")
 const Admin=require("./models/admin")
 const Student=require("./models/student")
 const Book=require("./models/books")
+const Uploadbooks=require("./models/adminbooks")
 const { json }=require("express")
 
 const port=process.env.PORT||3000
@@ -40,6 +41,25 @@ app.get("/secret",adminauth,(req,res)=>{
     res.render("secret")
 })
 
+app.get("/uploadBook", adminauth,(req,res)=>{
+  res.render("uploadBook")
+})
+
+app.post("/uploadBook", async(req,res)=>{
+  try {
+    const book = new Uploadbooks({
+      bookname : req.body.bookname,
+      bookid :req.body.bookid,
+      schoolid : req.body.schoolid,
+      quantity :req.body.quantity,
+    })
+    const uploadbooks = await book.save()
+    res.render("uploadBook")
+  } catch (e) {
+    console.log(e);
+  }
+})
+
 app.get("/logout",adminauth,async(req,res)=>{
     try {
         req.user.tokens=req.user.tokens.filter((elem)=>{
@@ -62,11 +82,11 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is name ${token}`)
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
-   
+
         for(let i=0;i<id.book.length;i++){
             console.log(id.book[i].bookname)
         }
-    
+
     const firstname=req.user.studentfirstname
     const lastname=req.user.studentlastname
     const fullname=firstname+" "+lastname
@@ -105,7 +125,7 @@ app.post("/adminProfile", async(req, res)=>{
         dateIssued:req.body.studentDateIssued,
         datereturned:req.body.studentDateReturned
     }
-    
+
     const id=await Book.findOne({studentid:req.body.bookStudentId})
     if(!id){
         const bookIssued = new Book({
@@ -120,7 +140,7 @@ app.post("/adminProfile", async(req, res)=>{
     id.book=id.book.concat(book1)
     const books = await id.save();
     }
-    
+
 
     res.status(201).render("index");
 
