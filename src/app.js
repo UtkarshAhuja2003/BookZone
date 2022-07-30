@@ -105,14 +105,24 @@ app.post("/adminProfile", async(req, res)=>{
         dateIssued:req.body.studentDateIssued,
         datereturned:req.body.studentDateReturned
     }
-    const bookIssued = new Book({
+    
+    const id=await Book.findOne({studentid:req.body.bookStudentId})
+    if(!id){
+        const bookIssued = new Book({
       studentid:req.body.bookStudentId,
       book:book1
     });
+    const books=await bookIssued.save()
 
-    const books = await bookIssued.save();
+    }
+    else{
+        id.studentid=req.body.bookStudentId
+    id.book=id.book.concat(book1)
+    const books = await id.save();
+    }
+    
 
-    res.status(201).render("adminProfile");
+    res.status(201).render("index");
 
   } catch (e) {
     console.log(e);
