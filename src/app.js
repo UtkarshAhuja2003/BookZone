@@ -14,6 +14,7 @@ require("./db/conn")
 const Admin=require("./models/admin")
 const Student=require("./models/student")
 const Book=require("./models/books")
+const Uploadbooks=require("./models/adminbooks")
 const { json }=require("express")
 
 const port=process.env.PORT||3000
@@ -38,6 +39,25 @@ app.get("/",(req,res)=>{
 app.get("/secret",adminauth,(req,res)=>{
    // console.log(`this is cookie  ${req.cookies.jwt}`);
     res.render("secret")
+})
+
+app.get("/uploadBook", adminauth,(req,res)=>{
+  res.render("uploadBook")
+})
+
+app.post("/uploadBook", async(req,res)=>{
+  try {
+    const book = new Uploadbooks({
+      bookname : req.body.bookname,
+      bookid :req.body.bookid,
+      schoolid : req.body.schoolid,
+      quantity :req.body.quantity,
+    })
+    const uploadbooks = await book.save()
+    res.render("uploadBook")
+  } catch (e) {
+    console.log(e);
+  }
 })
 
 app.get("/logout",adminauth,async(req,res)=>{
@@ -105,7 +125,7 @@ app.post("/adminProfile", async(req, res)=>{
         dateIssued:req.body.studentDateIssued,
         datereturned:req.body.studentDateReturned
     }
-    
+
     const id=await Book.findOne({studentid:req.body.bookStudentId})
     if(!id){
         const bookIssued = new Book({
@@ -120,7 +140,7 @@ app.post("/adminProfile", async(req, res)=>{
     id.book=id.book.concat(book1)
     const books = await id.save();
     }
-    
+
 
     res.status(201).render("index");
 
