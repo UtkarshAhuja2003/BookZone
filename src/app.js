@@ -82,10 +82,22 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is name ${token}`)
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
-   
-        // for(let i=0;i<id.book.length;i++){
-        //     console.log(id.book[i].bookname)
-        // }
+   const booknames=[]
+        for(let i=0;i<id.book.length;i++){
+            // console.log(id.book[i].bookname)
+            booknames[i]=id.book[i].bookname;
+        }
+        const bookissue=[]
+        for(let i=0;i<id.book.length;i++){
+            // console.log(id.book[i].bookname)
+            bookissue[i]=id.book[i].dateIssued;
+        }
+        const bookreturn=[]
+        for(let i=0;i<id.book.length;i++){
+            // console.log(id.book[i].bookname)
+            bookreturn[i]=id.book[i].datereturned;
+        }
+        
     
     const firstname=req.user.studentfirstname
     const lastname=req.user.studentlastname
@@ -98,7 +110,9 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         email:req.user.studentemail,
         enrollment:req.user.studentEnrollment,
         studentschoolname:req.user.studentschoolname,
-        // book1name:id.books[0]
+        a:booknames,
+        b:bookissue,
+        c:bookreturn
      })
     // res.render("studentprofile")
  })
