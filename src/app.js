@@ -1,12 +1,17 @@
 require("dotenv").config()
 const express=require("express")
 const app=express()
+var bodyParser = require('body-parser');
+var fs = require('fs');
+var multer = require('multer');
+const router = express.Router();
 const path=require("path")
 const ejs=require("ejs")
 const bcrypt=require("bcryptjs")
 const cookieParser=require("cookie-parser")
 const adminauth=require("./middleware/adminauth")
 const studentauth=require("./middleware/studentauth")
+const image=require("./middleware/image")
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
@@ -15,7 +20,13 @@ const Admin=require("./models/admin")
 const Student=require("./models/student")
 const Book=require("./models/books")
 const Uploadbooks=require("./models/adminbooks")
+// const imgModel = require('./model');
 const { json }=require("express")
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+router.use(express.static(__dirname + "./public/"))
 
 const port=process.env.PORT||3000
 
@@ -27,10 +38,34 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))
 
+// app.use(multer({ storage: fileStorage, fileFilter }).single("image"));
+
 app.use(express.static(static_path))
 app.set("view engine","ejs")
 app.set("views",template_path)
 // ejs.registerPartials(partial_pat h)
+
+var storage = multer.diskStorage({
+    destination:"./public/uploads/",
+
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+var upload = multer({ storage: storage }).single('image');
+
+app.get('/image', (req, res) => {
+    Uploadbooks.find({}, (err, items) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('An error occurred', err);
+        }
+        else {
+            res.render('image', { items: items });
+        }
+    });
+});
 
 app.get("/",(req,res)=>{
    res.render("index")
@@ -45,16 +80,32 @@ app.get("/uploadBook", adminauth,(req,res)=>{
   res.render("uploadBook")
 })
 
-app.post("/uploadBook", async(req,res)=>{
+app.post("/uploadBook", upload, async(req,res)=>{
   try {
     const book = new Uploadbooks({
       bookname : req.body.bookname,
       bookid :req.body.bookid,
       schoolid : req.body.schoolid,
       quantity :req.body.quantity,
+      filename : req.file.filename,
+      img : req.file.filename,
     })
     const uploadbooks = await book.save()
-    res.render("uploadBook")
+    // var obj = {
+    //     img: {
+    //         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+    //         contentType: 'image/png'
+    //     }
+    // }
+    // Uploadbooks.create(obj, (err, item) => {
+    //     if (err) {
+    //         console.log(err);
+    //     }
+    //     else {
+    //         // item.save();
+    //     }
+    // });
+            res.render("uploadBook")
   } catch (e) {
     console.log(e);
   }
@@ -75,11 +126,16 @@ app.get("/logout",adminauth,async(req,res)=>{
     }
 })
 
+
+
 app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
     // const token=req.user.studentfirstname
     // // const id=await Student.findOne({token})
     // console.log(`this is name ${token}`)
+
+
+
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
    const booknames=[]
@@ -95,8 +151,15 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         const bookreturn=[]
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
-            bookreturn[i]=id.book[i].datereturned;
+            // bookreturn[i]=(id.book[i].dateIssued);
         }
+        const bookreturned=[]
+        for(let i=0;i<id.book.length;i++){
+            // console.log(id.book[i].bookname)
+
+            bookreturned[i]=(id.book[i].datereturned);
+        }
+
 
 
     const firstname=req.user.studentfirstname
@@ -112,7 +175,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         studentschoolname:req.user.studentschoolname,
         a:booknames,
         b:bookissue,
-        c:bookreturn
+        c:bookreturn,
+        d:bookreturned
      })
     // res.render("studentprofile")
  })

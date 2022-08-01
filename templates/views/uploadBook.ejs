@@ -3,7 +3,7 @@
 
 
 <body>
-<form action="uploadBook" method="POST">
+<form action="uploadBook" method="POST" enctype="multipart/form-data">
   <div class="info">
       <div class="bookUpload">
           <div class="heading">Upload New Book</div>
@@ -27,8 +27,11 @@
               </div>
           </div>
           <div class="bookImage">
-              <input type="file" >
+              <input type="file" id="image" name="image" value="" required>
           </div>
+
+
+
           <div class="submit">
               <button class="submitB">Upload Book</button>
           </div>

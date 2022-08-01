@@ -19,7 +19,11 @@ const uploadbookSchema=new mongoose.Schema({
   quantity : {
     type: "number",
     required : true
-  }
+  },
+  img :
+    {
+        type: "string",
+    }
 })
 
 const Uploadbook=new mongoose.model("Uploadbook",uploadbookSchema)
