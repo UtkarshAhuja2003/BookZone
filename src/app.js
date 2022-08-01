@@ -97,8 +97,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
             // console.log(id.book[i].bookname)
             bookreturn[i]=id.book[i].datereturned;
         }
-        
-    
+
+
     const firstname=req.user.studentfirstname
     const lastname=req.user.studentlastname
     const fullname=firstname+" "+lastname
