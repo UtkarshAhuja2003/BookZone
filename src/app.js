@@ -45,7 +45,7 @@ app.get("/uploadBook", adminauth,(req,res)=>{
   res.render("uploadBook")
 })
 
-app.post("/uploadBook", async(req,res)=>{
+app.post("/uploadBook",adminauth, async(req,res)=>{
   try {
     const book = new Uploadbooks({
       bookname : req.body.bookname,
@@ -75,11 +75,16 @@ app.get("/logout",adminauth,async(req,res)=>{
     }
 })
 
+
+
 app.get("/studentprofile",studentauth,async(req,res)=>{
     // console.log(`this is cookie  ${req.cookies.jwt}`);
     // const token=req.user.studentfirstname
     // // const id=await Student.findOne({token})
     // console.log(`this is name ${token}`)
+   
+    
+    
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
    const booknames=[]
@@ -95,8 +100,15 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         const bookreturn=[]
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
-            bookreturn[i]=id.book[i].datereturned;
+            // bookreturn[i]=(id.book[i].dateIssued);
         }
+        const bookreturned=[]
+        for(let i=0;i<id.book.length;i++){
+            // console.log(id.book[i].bookname)
+            
+            bookreturned[i]=(id.book[i].datereturned);
+        }
+        
         
     
     const firstname=req.user.studentfirstname
@@ -112,7 +124,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         studentschoolname:req.user.studentschoolname,
         a:booknames,
         b:bookissue,
-        c:bookreturn
+        c:bookreturn,
+        d:bookreturned
      })
     // res.render("studentprofile")
  })
