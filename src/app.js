@@ -26,8 +26,10 @@ const { json }=require("express")
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-router.use(express.static(__dirname + "../public/uploads"))
-
+// app.use(express.static(__dirname + "./public/uploads"))
+const image_path=path.join(__dirname,"../public/uploads/")
+// app.use( express.static(image_path));
+app.use("/public/uploads",express.static(image_path))
 const port=process.env.PORT||3000
 
 const static_path=path.join(__dirname,"../public")
