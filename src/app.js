@@ -11,7 +11,7 @@ const bcrypt=require("bcryptjs")
 const cookieParser=require("cookie-parser")
 const adminauth=require("./middleware/adminauth")
 const studentauth=require("./middleware/studentauth")
-const image=require("./middleware/image")
+// const image=require("./middleware/image")
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
@@ -26,7 +26,7 @@ const { json }=require("express")
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-router.use(express.static(__dirname + "./public/"))
+router.use(express.static(__dirname + "../public/uploads"))
 
 const port=process.env.PORT||3000
 
@@ -55,14 +55,14 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single('image');
 
-app.get('/image', (req, res) => {
+app.get('/images', (req, res) => {
     Uploadbooks.find({}, (err, items) => {
         if (err) {
             console.log(err);
             res.status(500).send('An error occurred', err);
         }
         else {
-            res.render('image', { items: items });
+            res.render('images', { items: items });
         }
     });
 });
@@ -70,6 +70,10 @@ app.get('/image', (req, res) => {
 app.get("/",(req,res)=>{
    res.render("index")
 })
+
+// app.get('/images', (req, res) => {
+//   res.render("images")
+// })
 
 app.get("/secret",adminauth,(req,res)=>{
    // console.log(`this is cookie  ${req.cookies.jwt}`);
