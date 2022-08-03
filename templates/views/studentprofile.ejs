@@ -10,6 +10,8 @@
             <div class="profile enroll">Enrollment ID: <%=enrollment%></div>
             <div class="profile Sname">School Name: <%=studentschoolname%></div>
 
+            <a href="logoutstudent"><button type="button" name="button">Log out</button></a>
+
         </div>
         <div class="info">
             <div class="record1">
@@ -22,8 +24,8 @@
                             <div class="issued"><%= a[i]%></div>
                             <% }
                         %>
-                        
-                        
+
+
                     </div>
                     <div class="col col2">
                         <div class="title">ISSUED DATE</div>
@@ -33,17 +35,17 @@
                             <div class="issued"><%=b[i].getDate() +"-"+month+"-"+b[i].getFullYear()%></div>
                             <% }
                         %>
-                        
+
                     </div>
                     <div class="col col3">
                         <div class="title">RETURN DATE</div>
                         <% for(var i = 0; i< c.length; i++){%>
                             <%var month=c[i].getMonth()+1;%>
-                            
+
                             <div class="issued"><%=c[i].getDate() +"-"+month+"-"+c[i].getFullYear()%></div>
                             <% }
                         %>
-                        
+
                     </div>
                 </div>
             </div>
