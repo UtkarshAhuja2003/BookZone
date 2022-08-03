@@ -28,7 +28,9 @@
                     <div class="col col2">
                         <div class="title">ISSUED DATE</div>
                         <% for(var i = 0; i< b.length; i++){%>
-                            <div class="issued"><%= b[i]%></div>
+                            <%var month=b[i].getMonth()+1;%>
+
+                            <div class="issued"><%=b[i].getDate() +"-"+month+"-"+b[i].getFullYear()%></div>
                             <% }
                         %>
                         
@@ -36,7 +38,9 @@
                     <div class="col col3">
                         <div class="title">RETURN DATE</div>
                         <% for(var i = 0; i< c.length; i++){%>
-                            <div class="issued"><%= c[i]%></div>
+                            <%var month=c[i].getMonth()+1;%>
+                            
+                            <div class="issued"><%=c[i].getDate() +"-"+month+"-"+c[i].getFullYear()%></div>
                             <% }
                         %>
                         

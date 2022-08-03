@@ -149,15 +149,32 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
             // console.log(id.book[i].bookname)
             booknames[i]=id.book[i].bookname;
         }
+        const bookissue2=[]
         const bookissue=[]
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
+            
             bookissue[i]=id.book[i].dateIssued;
+            bookissue2[i]=id.book[i].dateIssued;
         }
         const bookreturn=[]
         for(let i=0;i<id.book.length;i++){
-            // console.log(id.book[i].bookname)
-            // bookreturn[i]=(id.book[i].dateIssued);
+            // var date = new Date();
+            // date=bookissue2[i];
+            // date.setDate(date.getDate() + 15);
+            // console.log(date)
+            // bookreturn[i]=date;
+            
+            
+            Date.prototype.addDays = function (days) {
+                const date = new Date(this.valueOf());
+                date.setDate(date.getDate() + days);
+                return date;
+            };
+           var date = new Date();
+           date=bookissue2[i]
+            // console.log(date.addDays(15));
+            bookreturn[i]=date.addDays(15)
         }
         const bookreturned=[]
         for(let i=0;i<id.book.length;i++){
@@ -220,9 +237,20 @@ app.post("/adminProfile", async(req, res)=>{
 
     }
     else{
-        id.studentid=req.body.bookStudentId
-    id.book=id.book.concat(book1)
-    const books = await id.save();
+        const bookidd=await Book.findOne({bookid:book1.bookid})
+        if(!bookidd){
+            id.studentid=req.body.bookStudentId
+            id.book=id.book.concat(book1)
+            console.log("fuck off")
+            const books = await id.save();
+           
+        }
+        else{
+            console.log("fuck sourav")
+            id.book.datereturned=req.body.studentDateReturned
+            await id.save()
+        }
+        
     }
 
 
