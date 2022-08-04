@@ -142,11 +142,11 @@ label{
 .sameLine{
     display: inline-flex;
 }
-span{
+/* span{
     display: flex;
     position: relative;
     flex: 1;
-}
+} */
 input{
     width: 95%;
     height: 3rem;
@@ -239,7 +239,7 @@ input[type = "email"]{
     border-radius: 50%;
     background: white;
 }
-section a{
+/* section a{
     margin: 0 auto;
     color: #5800FF;
     font-size: 1.5rem;
@@ -247,7 +247,7 @@ section a{
 }
 section a:hover{
     color: white;
-}
+} */
 .password{
     margin-right: 0.5rem;
     margin-left: 8rem;
@@ -395,8 +395,9 @@ section a:hover{
     font-size: 4rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #3330E4;
+    color: #ecb227;
 }
+
 .intro{
     background-color: aliceblue;
     margin: 8rem 5rem;
@@ -405,6 +406,7 @@ section a:hover{
     border-radius: 1rem;
 }
 .aboutUs{
+    
     display: flex;
     justify-content: center;
     align-items: center;
