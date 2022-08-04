@@ -86,6 +86,10 @@ app.get("/uploadBook", adminauth,(req,res)=>{
   res.render("uploadBook")
 })
 
+app.get("/about",(req,res)=>{
+    res.render("about")
+  })
+
 app.post("/uploadBook", upload, async(req,res)=>{
   try {
     const book = new Uploadbooks({
