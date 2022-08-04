@@ -17,7 +17,13 @@ const bookSchema=new mongoose.Schema({
         dateIssued:{
           type:Date,
         },
-        datereturned:{
+        
+      }],
+      datereturned:[{
+        id:{
+          type:String,
+        },
+        date:{
           type:Date,
         }
       }]

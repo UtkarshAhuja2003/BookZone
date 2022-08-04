@@ -178,9 +178,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         }
         const bookreturned=[]
         for(let i=0;i<id.book.length;i++){
-            // console.log(id.book[i].bookname)
-
-            bookreturned[i]=(id.book[i].datereturned);
+            bookreturned[i]=id.datereturned[i].date;
+           
         }
 
 
@@ -224,7 +223,7 @@ app.post("/adminProfile", async(req, res)=>{
         bookid:req.body.studentBookId,
         bookname:req.body.studentBookName,
         dateIssued:req.body.studentDateIssued,
-        datereturned:req.body.studentDateReturned
+        
     }
 
     const id=await Book.findOne({studentid:req.body.bookStudentId})
@@ -246,8 +245,11 @@ app.post("/adminProfile", async(req, res)=>{
            
         }
         else{
-            console.log("fuck sourav")
-            id.book.datereturned=req.body.studentDateReturned
+            const dates={
+                id:req.body.studentBookId,
+                date:req.body.studentDateReturned
+            }
+            id.datereturned=id.datereturned.concat(dates)
             await id.save()
         }
         
