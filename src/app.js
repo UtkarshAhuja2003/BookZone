@@ -153,7 +153,7 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         const bookissue=[]
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
-            
+
             bookissue[i]=id.book[i].dateIssued;
             bookissue2[i]=id.book[i].dateIssued;
         }
@@ -164,8 +164,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
             // date.setDate(date.getDate() + 15);
             // console.log(date)
             // bookreturn[i]=date;
-            
-            
+
+
             Date.prototype.addDays = function (days) {
                 const date = new Date(this.valueOf());
                 date.setDate(date.getDate() + days);
@@ -242,7 +242,7 @@ app.post("/adminProfile", async(req, res)=>{
             id.book=id.book.concat(book1)
             console.log("fuck off")
             const books = await id.save();
-           
+
         }
         else{
             const dates={
@@ -252,7 +252,7 @@ app.post("/adminProfile", async(req, res)=>{
             id.datereturned=id.datereturned.concat(dates)
             await id.save()
         }
-        
+
     }
 
 
@@ -297,7 +297,7 @@ app.post("/loginStudent",async(req,res)=>{
        const isMatch=await bcrypt.compare(studentpassword,id.studentpassword)
 
        if(isMatch){
-        res.status(201).render("index")
+        res.status(201).redirect("/studentprofile")
        }
        else{
         res.send("Invalid login details")
@@ -331,7 +331,7 @@ app.post("/loginAdmin",async(req,res)=>{
        const isMatch=await bcrypt.compare(adminpassword,id.adminpassword)
 
        if(isMatch){
-        res.status(201).render("index")
+        res.status(201).redirect("/adminProfile")
        }
        else{
         res.send("Invalid login details")

@@ -20,6 +20,8 @@ nav{
     background-color: #231955;
     height: 5rem;
     width: 100%;
+    background-color: #171221;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6) ;
 }
 label.logo{
     color: white;
@@ -35,19 +37,24 @@ nav ul{
 nav ul li{
     display: inline-block;
     line-height: 5rem;
-    margin: 0 5px;
+    margin: 0 3rem;
 }
 nav ul li a{
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.3rem 0.7rem;
+    text-decoration: none;
+    font-family: DM Sans;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 34px;
+    letter-spacing: 0.5333333611488342px;
+    text-align: left;
+    color: #eee;
 }
-a:hover{
+/* a:hover{
     background-color: #5800FF;
     border-radius: 0.5rem;
     transition: 0.5s;
 
-}
+} */
 .checkbtn{
     font-size: 1.6rem;
     color: white;
@@ -90,16 +97,21 @@ a:hover{
     nav ul li a{
         font-size: 0.9rem;
     }
-    a:hover{
+    /* a:hover{
         background: none;
         color: #0082e6;
-    }
+    } */
     #check:checked~ul{
         left: 0;
     }
 }
+
+
+ /*! backgroun colour */
+
 .login{
-    background-image: url(https://i.pinimg.com/564x/bd/46/8d/bd468dd0fc8520c030bd66416ab17597.jpg);
+    /* background-image: url(https://i.pinimg.com/564x/bd/46/8d/bd468dd0fc8520c030bd66416ab17597.jpg); */
+    background-color: #171221;
 }
 .studentLogin{
     margin-right: 3rem;
@@ -379,6 +391,299 @@ section a:hover{
     width: 30%;
     height: 10rem;
 }
+*! ABOUT US PAGE */
+.team{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3330E4;
+}
+.intro{
+    background-color: aliceblue;
+    margin: 8rem 5rem;
+    padding: 5rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+}
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+}
+.profileCard{
+    position: relative;
+    margin: 2rem 7rem;
+    width: 20rem;
+    height: 20rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 2rem #231955;
+    transition: .5s;
+}
+.profileCard:hover{
+    border-radius: 1rem;
+    height: 30rem;
+}
+.profileCard .imgAbout{
+    position: relative;
+    transition: .5s;
+}
+.profileCard:hover .imgAbout{
+    transform: translateY(-7rem);
+    z-index: 99;
+}
+.imgAbout img{
+    border-radius: 100%; 
+    box-shadow: 0 0 2rem #231955;
+    transition: .5s;
+    filter: grayscale(100%);
+}
+.profileCard:hover img{
+    border-radius: 1rem;
+    filter: grayscale(0);
+}
+.caption{
+    text-align: center;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition: .5s;
+}
+.profileCard:hover .caption{
+    opacity: 1;
+}
+.caption h3{
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+.caption p{
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    color: #2196F3;
+}
+.favAbout{
+    color: #231955;
+    position: relative;
+    margin: 0.5rem;
+}
+.favAbout:hover{
+    direction: none;
+}
+
+
+/*! FOOTER */
+footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color: #222831;
+    color: #EEEEEE;
+}
+.mainContainer{
+    display: flex;
+}
+.mainContainer .box{
+    flex-basis: 50%;
+    padding: 1rem 1.5rem;
+}
+.box h2{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.box .content{
+    margin-top: 1.5rem;
+    position: relative;
+}
+.box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #393E46;
+}
+.box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #B55400;
+    top: -10px;
+}
+.box .content p{
+    text-align: justify;
+} 
+.left .content .social{
+    margin-top: 1rem;
+}
+.left .content .social a{
+    padding: 0 2px;
+    color: #EEEEEE;
+}
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background-color: #393E46;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}
+.left .content .social a span:hover{
+    background-color: #B55400;
+}
+.center .content .fas{
+    height: 30px;
+    width: 30px;
+    background-color: #393E46;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 100%;
+}
+.center .content .text{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+.right form .text{
+    font-size: 1rem;
+    color: #EEEEEE;
+}
+.right button{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #393E46;
+    font-weight: bolder;
+}
+.right button:hover{
+    background-color: #B55400;
+    color: #EEEEEE;
+    border: 2px solid #393E46;
+    font-weight: bolder;
+}
+.right form{
+    margin-top: 1rem;
+}
+.right form input, .right form textarea{
+    width: 100%;
+    font-size: 1rem;
+    background-color: #393E46;
+    padding: 0.5rem;
+    border: 2px solid #222831;
+    outline: #B55400;
+    color: #37AA9C;
+    font-weight: bold;
+}
+.Fbottom{
+    padding: 1rem;
+    text-align: center;
+}
+.Fbottom a{
+    color: #C4B6B6;
+}
+.Fbottom a:hover{
+    background-color: #222831;
+}
+@media screen and (max-width: 900px){
+    footer{
+        position: fixed;
+        bottom: 0px;
+    }
+    .mainContainer{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .mainContainer .box{
+        margin: 0.5rem 0;
+    }
+}
+
+.team{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3330E4;
+}
+.intro{
+    background-color: aliceblue;
+    margin: 8rem 5rem;
+    padding: 5rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+}
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+}
+.profileCard{
+    position: relative;
+    margin: 2rem 7rem;
+    width: 20rem;
+    height: 20rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 2rem #231955;
+    transition: .5s;
+}
+.profileCard:hover{
+    border-radius: 1rem;
+    height: 30rem;
+}
+.profileCard .imgAbout{
+    position: relative;
+    transition: .5s;
+}
+.profileCard:hover .imgAbout{
+    transform: translateY(-7rem);
+    z-index: 99;
+}
+.imgAbout img{
+    border-radius: 100%; 
+    box-shadow: 0 0 2rem #231955;
+    transition: .5s;
+    filter: grayscale(100%);
+}
+.profileCard:hover img{
+    border-radius: 1rem;
+    filter: grayscale(0);
+}
+.caption{
+    text-align: center;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition: .5s;
+}
+.profileCard:hover .caption{
+    opacity: 1;
+}
+.caption h3{
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+.caption p{
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    color: #2196F3;
+}
+.favAbout{
+    color: #231955;
+    position: relative;
+    margin: 0.5rem;
+}
+.favAbout:hover{
+    direction: none;
+}
+
 
 
 
