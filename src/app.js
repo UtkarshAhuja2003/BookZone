@@ -240,22 +240,35 @@ app.post("/adminProfile", async(req, res)=>{
 
     }
     else{
-        const bookidd=await Book.findOne({bookid:book1.bookid})
-        if(!bookidd){
+        // console.log(req.body.studentDateReturned);
+        if(req.body.studentDateReturned==''){
             id.studentid=req.body.bookStudentId
-            id.book=id.book.concat(book1)
-            console.log("fuck off")
-            const books = await id.save();
-
+           id.book=id.book.concat(book1)
+             const books = await id.save();
         }
         else{
             const dates={
-                id:req.body.studentBookId,
-                date:req.body.studentDateReturned
-            }
-            id.datereturned=id.datereturned.concat(dates)
-            await id.save()
+                        id:req.body.studentBookId,
+                        date:req.body.studentDateReturned
+                    }
+                    id.datereturned=id.datereturned.concat(dates)
+                    await id.save()
         }
+        // const bookidd=await Book.findOne({bookid:book1.bookid})
+        // if(!bookidd){
+        //     id.studentid=req.body.bookStudentId
+        //     id.book=id.book.concat(book1)
+        //     const books = await id.save();
+
+        // }
+        // else{
+        //     const dates={
+        //         id:req.body.studentBookId,
+        //         date:req.body.studentDateReturned
+        //     }
+        //     id.datereturned=id.datereturned.concat(dates)
+        //     await id.save()
+        // }
 
     }
 
