@@ -100,6 +100,7 @@ app.post("/uploadBook", upload, async(req,res)=>{
       filename : req.file.filename,
       img : req.file.filename,
     })
+
     const uploadbooks = await book.save()
     // var obj = {
     //     img: {
@@ -180,11 +181,11 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
             // console.log(date.addDays(15));
             bookreturn[i]=date.addDays(15)
         }
-        const bookreturned=[]
-        for(let i=0;i<id.book.length;i++){
-            bookreturned[i]=id.datereturned[i].date;
+        // const bookreturned=[]
+        // for(let i=0;i<id.book.length;i++){
+        //     bookreturned[i]=id.datereturned[i].date;
            
-        }
+        // }
 
 
 
@@ -202,7 +203,7 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         a:booknames,
         b:bookissue,
         c:bookreturn,
-        d:bookreturned
+        // d:bookreturned
      })
     // res.render("studentprofile")
  })
@@ -229,7 +230,14 @@ app.post("/adminProfile", async(req, res)=>{
         dateIssued:req.body.studentDateIssued,
         
     }
-
+    const id2=await Uploadbooks.findOne({bookid:book1.bookid})
+    if(!id2){
+        res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
+    }
+    if(id2.quantity<=0||id2.quantity==null){
+        
+        res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
+    }
     const id=await Book.findOne({studentid:req.body.bookStudentId})
     if(!id){
         const bookIssued = new Book({
@@ -241,19 +249,19 @@ app.post("/adminProfile", async(req, res)=>{
     }
     else{
         // console.log(req.body.studentDateReturned);
-        if(req.body.studentDateReturned==''){
+        // if(req.body.studentDateReturned==''){
             id.studentid=req.body.bookStudentId
            id.book=id.book.concat(book1)
              const books = await id.save();
-        }
-        else{
-            const dates={
-                        id:req.body.studentBookId,
-                        date:req.body.studentDateReturned
-                    }
-                    id.datereturned=id.datereturned.concat(dates)
-                    await id.save()
-        }
+        // }
+        // else{
+        //     const dates={
+        //                 id:req.body.studentBookId,
+        //                 date:req.body.studentDateReturned
+        //             }
+        //             id.datereturned=id.datereturned.concat(dates)
+        //             await id.save()
+        // }
         // const bookidd=await Book.findOne({bookid:book1.bookid})
         // if(!bookidd){
         //     id.studentid=req.body.bookStudentId
