@@ -117,7 +117,7 @@ nav ul li a{
     margin-right: 3rem;
 }
 .logo:hover {
-    background-color: #231955;
+    /* background-color: #231955; */
     cursor: pointer;
 }
 main{
@@ -156,14 +156,14 @@ input{
     border: 1px solid lightgrey;
     border-radius: 0.5rem;
 }
-img{
+#head{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 10rem;
     border-radius: 100%;
 }
-i{
+.registerrr {
     position: absolute;
     font-size: 25px;
     color: black;
@@ -469,6 +469,7 @@ section a:hover{
     color: #231955;
     position: relative;
     margin: 0.5rem;
+    font-size: 25px;
 }
 .favAbout:hover{
     direction: none;
@@ -592,7 +593,7 @@ footer{
 }
 @media screen and (max-width: 900px){
     footer{
-        position: fixed;
+        position: relative;
         bottom: 0px;
     }
     .mainContainer{
@@ -603,6 +604,16 @@ footer{
         margin: 0.5rem 0;
     }
 }
+
+
+.profileee{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    border-radius: 100%;
+}
+
 
 .team{
     font-size: 4rem;
@@ -685,6 +696,91 @@ footer{
     direction: none;
 }
 
+
+
+
+.faq{
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    font-family: 'Inter', sans-serif;
+}
+.faqTitle{
+    font-size: 3rem;
+    text-align: center;
+    color: #222831;
+    margin-bottom: 5rem;
+}
+.containerFaq{
+    width: 100%;
+    max-width: 60rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+.accordianItem{
+    align-items: center;
+    justify-content: center;
+    background-color: #222831;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+}
+.accordianLink{
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #B7D3DF;
+    text-decoration: none;
+    background-color: #222831;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.accordianLink i{
+    background-color: #222831;
+    padding: 0.2rem;
+}
+.accordianLink .up{
+    display: none;
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    position: relative;
+    background-color: #A5C9CA;
+    transition: all 0.4s ease;
+}
+.answer::before{
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 100%;
+    background-color: #898AA6;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.answer p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #222831;
+    padding: 1rem;
+}
+.accordion input{
+    display: none;
+}
+.accordianItem input:checked ~ .answer{
+    max-height: 100vh;
+}
+.accordianItem input:checked ~ .accordianLink .down i{
+    display: none;
+}
+.accordianItem input:checked ~ .accordianLink .up{
+    display: block;
+}
 
 
 
