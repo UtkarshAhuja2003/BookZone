@@ -67,5 +67,5 @@ Start the server
 
 [Utkarsh Ahuja](https://www.linkedin.com/in/utkarsh-ahuja-44aa90227)  - Full Stack Developer\
 [Avneet Singh](https://www.linkedin.com/in/avneet-singh-7758a1227/)  - Front End Developer\
-[Sourav Bhunia](https://www.linkedin.com/in/sourav-kumar-bhunia-38408917a)  - Back End Developer
+[Sourav Kumar Bhunia](https://www.linkedin.com/in/sourav-kumar-bhunia-38408917a)  - Back End Developer
 
