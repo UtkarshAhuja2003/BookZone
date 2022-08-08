@@ -615,7 +615,22 @@ footer{
     .mainContainer .box{
         margin: 0.5rem 0;
     }
+    .school{
+        position: relative;
+    }
+    .Card{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .homepage{
+        position: relative;
+    }
+    .container1{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }
+
 
 
 .profileee{
