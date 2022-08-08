@@ -2,66 +2,56 @@
 <%- include('../partials/navbar.ejs') %>
 <body class="login">
    
-    <main>
-        <img src="https://i.ibb.co/txHV3T8/login.jpg" id="head"  alt="login">
-        <h1 style="margin-left: 17%;">Register as Student</h1>
-        <section>
-            <div class="sameLine">
-              <form action="/registerStudent" method="POST">
+<main>
+            <img src="https://i.ibb.co/txHV3T8/login.jpg" id="head"  alt="login">
+            <h1 style="margin-left: 17%;">Register as Student</h1>
+            <section>
                 <div class="sameLine">
-                    <span>
-                        <input type="text" name="studentfirstname" placeholder="First Name">
-                    </span>
-                    <span>
-                        <input type="text" name="studentlastname" placeholder="Last Name">
-                    </span>
-                <!-- <span style="padding-top: 10px;">
-                    <label class="gender"  style="margin-right: 1rem;">Male
-                        <input type="radio" name="gender">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="gender">Female
-                        <input type="radio" name="gender">
-                        <span class="checkmark"></span>
-                    </label>
-                </span> -->
-                </div>
-                <div class="sameLine">
-                    <span>
-                        <input type="number" class="form-control" name="studentEnrollment" placeholder="Enrollment number">
-                    </span>
-                    <span>
-                        <input type="number" name="studentage" placeholder="Age" >
-                    </span>
-                </div>
-                <div class="sameLine form-group">
-                    <span>
-                        <input type="email" class="form-control" name="studentemail" placeholder="Your email">
-                    </span>
-                    <span style="margin-left: 8%;">
-                        <input type="text" class="form-control" name="studentschoolname" placeholder="Your School Name">
-                    </span>
-                </div>
-                <div class="password sameLine form-group">
-                    <span>
-                        <input type="password" class="form-control" name="studentpassword" placeholder="Password*">
-                    </span>
-                    <span>
-                        <input type="password" name="studentcpassword" placeholder="Confirm Password*">
-                    </span>
-                </div>
+                  <form action="/registerStudent" method="POST">
+                    <div class="sameLine">
+                        <span>
+                            <input type="text" name="studentfirstname" placeholder="First Name">
+                        </span>
+                        <span>
+                            <input type="text" name="studentlastname" placeholder="Last Name">
+                        </span>
+                    </div>
+                    <div class="sameLine">
+                        <span>
+                            <input type="number" class="form-control" name="studentEnrollment" placeholder="Enrollment number">
+                        </span>
+                        <span>
+                            <input type="number" name="studentage" placeholder="Age" >
+                        </span>
+                    </div>
+                    <div class="sameLine form-group">
+                        <span>
+                            <input type="email" class="form-control" name="studentemail" placeholder="Your email" style="width: 17.7rem;">
+                        </span>
+                        <span style="margin-left: 8%;">
+                            <input type="text" class="form-control" name="studentschoolname" placeholder="Your School Name" style="transform: translateX(-35px); width:17.75rem;">
+                        </span>
+                    </div>
+                    <div class="password sameLine form-group" style="position: relative;">
+                        <span style="position: relative;">
+                            <input type="password" class="form-control" name="studentpassword" placeholder="Password*" style="transform: translateX(-73px); width: 20rem;>
+                        </span>
+                        <span style="position: relative;">
+                            <input type="password" name="studentcpassword" placeholder="Confirm Password*" style="transform: translateX(-24px);">
+                        </span>
+                    </div>
+                    <div>
+                        <input type="submit" value="Register Student">
+                    </div>
+                    <div>
+                        <a href="loginStudent" style="text-align: center;margin-left: 30%; font-size: 1.2rem; ">Login to existing account?</a>
+                    </div>
+                  </form>
+    
                 <div>
-                    <input type="submit" value="Register Student">
-                </div>
-                <div>
-                    <a href="loginStudent" style="text-align: center;margin-left: 30%; font-size: 1.2rem; ">Login to existing account?</a>
-                </div>
-              </form>
-
-            <div>
-
-
-        </section>
-    </main>
+    
+    
+            </section>
+        </main>
 
     <%- include('../partials/footer.ejs') %>
