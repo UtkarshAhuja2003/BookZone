@@ -94,7 +94,7 @@ app.post("/uploadBook", upload, async(req,res)=>{
     }
     const id=await Uploadbooks.findOne({schoolid:req.body.schoolid})
     if(!id){
-        console.log("bye");
+        // console.log("bye");
         const booknew = new Uploadbooks({
       schoolid:req.body.schoolid,
       book:book1
@@ -103,7 +103,7 @@ app.post("/uploadBook", upload, async(req,res)=>{
 
     }
     else{
-        console.log("hello")
+        // console.log("hello")
         // console.log(req.body.studentDateReturned);
         // if(req.body.studentDateReturned==''){
             // id.schoolid=req.body.schoolid
@@ -144,20 +144,24 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
 
     const id1=req.user.studentEnrollment
     const id=await Book.findOne({studentid:id1})
-   const booknames=[]
+    const booknames=[]
+    const bookissue2=[]
+    const bookissue=[]
+    const bookreturn=[]
+    if(id){
+        
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
             booknames[i]=id.book[i].bookname;
         }
-        const bookissue2=[]
-        const bookissue=[]
+       
         for(let i=0;i<id.book.length;i++){
             // console.log(id.book[i].bookname)
 
             bookissue[i]=id.book[i].dateIssued;
             bookissue2[i]=id.book[i].dateIssued;
         }
-        const bookreturn=[]
+      
         for(let i=0;i<id.book.length;i++){
             // var date = new Date();
             // date=bookissue2[i];
@@ -181,6 +185,8 @@ app.get("/studentprofile",studentauth,async(req,res)=>{
         //     bookreturned[i]=id.datereturned[i].date;
            
         // }
+    }
+   
 
 
 
