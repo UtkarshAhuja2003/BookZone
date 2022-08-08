@@ -1,7 +1,11 @@
 
 # BOOK ZONE
 
+
+
 ![Library management system](https://img.shields.io/badge/Library--management-system-brightgreen)
+
+![image](https://user-images.githubusercontent.com/70762626/183497787-01a53949-a333-4057-b3a4-fe29e17eece6.png)
 
 An interactive web portal for automating various manual processes done by librarian and student.
 
@@ -61,6 +65,10 @@ Start the server
 ```bash
   npm run dev
 ```
+
+## Website Walkthrough
+
+
 
 
 ## The HTML_HACKERS
