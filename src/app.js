@@ -58,10 +58,11 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single('image');
 
 
-
 app.get("/",(req,res)=>{
-   res.render("index")
-})
+    
+     res.render("index")
+  })
+  
 app.get("/faq",(req,res)=>{
     res.render("faq")
  })
