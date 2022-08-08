@@ -907,6 +907,22 @@ footer{
 #radio4:checked ~ .slide1{
     margin-left: -60%;
 }
+
+#rad1:checked ~ .slid1{
+    margin-left: 0;
+}
+#rad2:checked ~ .slid1{
+    margin-left: -20%;
+}
+#rad3:checked ~ .slid1{
+    margin-left: -40%;
+}
+#rad4:checked ~ .slid1{
+    margin-left: -60%;
+}
+.rev h1{
+    text-align: center;
+}
 .slide{
     display: flex;
 }
@@ -1040,7 +1056,7 @@ footer{
 }
 .Card .book .bookImg img{
     padding: 1rem;
-    height: 25rem;
+    height: 20rem;
 }
 .book .bookName{
     font-size: 2rem;

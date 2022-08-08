@@ -412,13 +412,58 @@
 </section>
 
 
-
+<!--! -------------------------- REVIEWS ---------------->
+<div class="rev">
+    <h1>Some Of Our Site Reviews:</h1>
+</div>
+<section class="reviews carousel">
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radioBtn" id="rad1">
+            <input type="radio" name="radioBtn" id="rad2">
+            <input type="radio" name="radioBtn" id="rad3">
+            <input type="radio" name="radioBtn" id="rad4">
+  
+            <div class="slide slid1">
+                <span class="p">“Best place to check whether the book is available in library or not.”</span>
+            </div>
+  
+            <div class="slide slid2">
+                <span class="p">“I uses this website for so long and everytime it shows correct data about availability of the book.”</span>
+            </div>
+  
+            <div class="slide slid3">
+                <span class="p">“This website helps me by saving my time.”</span>
+            </div>
+  
+            <div class="slide slid4">
+                <span class="p">“In starting I face some problem but after when i become handy it works like a charm.”</span>
+            </div>
+  
+            <div class="navigationAuto">
+                <div class="autoBtn1"></div>
+                <div class="autoBtn2"></div>
+                <div class="autoBtn3"></div>
+                <div class="autoBtn4"></div>
+            </div>
+        </div>
+  
+        <div class="navigationManual">
+            <label for="rad1" class="manualBtn"></label>
+            <label for="rad2" class="manualBtn"></label>
+            <label for="rad3" class="manualBtn"></label>
+            <label for="rad4" class="manualBtn"></label>
+        </div>
+  
+    </div>
+</section>
 
 
 <script type="text/javascript">
   var counter = 1;
   setInterval(function(){
       document.getElementById("radio"+counter).checked = true;
+      document.getElementById("rad"+counter).checked = true;
       counter++;
       if(counter>4){
           counter = 1;
