@@ -231,14 +231,14 @@ app.post("/adminProfile", async(req, res)=>{
         dateIssued:req.body.studentDateIssued,
         
     }
-    const id2=await Uploadbooks.findOne({bookid:book1.bookid})
-    if(!id2){
-        res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
-    }
-    if(id2.quantity<=0||id2.quantity==null){
+    // const id2=await Uploadbooks.findOne({bookid:book1.bookid})
+    // if(!id2){
+    //     res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
+    // }
+    // if(id2.quantity<=0||id2.quantity==null){
         
-        res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
-    }
+    //     res.send("NO BOOKS AVAILABLE WITH GIVEN ID")
+    // }
     const id=await Book.findOne({studentid:req.body.bookStudentId})
     if(!id){
         const bookIssued = new Book({
