@@ -783,6 +783,166 @@ footer{
 }
 
 
+.homepage{
+    margin-top: 7rem;
+}
+.container1{
+    text-align: center;
+    margin: 10rem;
+    display: flex;
+}
+.studentContainer{
+    flex: 1;
+}
+.adminContainer{
+    flex: 1;
+}
+.container2{
+    margin: 2rem;
+    border-radius: 0.7rem;
+    padding: 2rem;
+    background-color: #7D9D9C;
+}
+.titleH{
+    padding: 2rem;
+}
+.container2 .titleH label{
+    font-size: 2rem;
+    color: #222831;
+}
+.imageH{
+    border-radius: 100%;
+    height: 25rem;
+    width: auto;
+}
+.buttonH{
+    padding: 1rem;
+    width: 100%;
+}
+.butH{
+    width: 60%;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    background-color: #E7F6F2;
+    color: #222831;
+    outline: none;
+    border: 2px solid #222831;
+}
+.butH:hover{
+    background-color: #222831;
+    color: #E7F6F2;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFD2CF;
+    margin: 4rem 12rem;
+    border-radius: 1rem;
+}
+.slider .slides input{
+    display: none;
+}
+.slider{
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+}
+.slides{
+    height: 500px;
+    width: 500%;
+    display: flex;
+}
+.slide{
+    width: 800px;
+    height: 500px;
+    transition: 1s;
+}
+.navigationManual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manualBtn{
+    border: 2px solid #7D9D9C;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 999;
+}
+.manualBtn:hover{
+    background-color: #7D9D9C;
+}
+.manualBtn:not(:last-child){
+    margin-right: 20px;
+}
+#radio1:checked ~ .slide1{
+    margin-left: 0;
+}
+#radio2:checked ~ .slide1{
+    margin-left: -20%;
+}
+#radio3:checked ~ .slide1{
+    margin-left: -40%;
+}
+#radio4:checked ~ .slide1{
+    margin-left: -60%;
+}
+.slide{
+    display: flex;
+}
+.slide .p{
+    flex: 3;
+    font-size: 3.7rem;
+    padding: 2rem;
+}
+.slide img{
+    flex: 1;
+    padding: 1.9rem;
+    margin-top: 2.5rem;
+    height: 23rem;
+    width: auto;
+    transform: rotate(-10deg);
+}
+.navigationAuto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+.navigationAuto div{
+    border: 2px solid #7D9D9C;
+    padding: 5px;
+    margin-top: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 999;
+}
+.navigationAuto div:not(:last-child){
+    margin-right: 20px;
+}
+#radio1:checked ~ .navigationAuto .autoBtn1{
+    background: #7D9D9C;
+}
+#radio2:checked ~ .navigationAuto .autoBtn2{
+    background: #7D9D9C;
+}
+#radio3:checked ~ .navigationAuto .autoBtn3{
+    background: #7D9D9C;
+}
+#radio4:checked ~ .navigationAuto .autoBtn4{
+    background: #7D9D9C;
+}
+
 
 
 #loader .center {
@@ -839,3 +999,38 @@ footer{
       transform: scale(0);
     }
   }
+.box1{
+    background-color: #B2B1B9;
+    margin: 4rem 12rem;
+    border-radius: 1rem;
+}
+.box1 .sklName{
+    text-align: center;
+}
+.box1 .sklName p{
+    margin: 3rem;
+    font-size: 4rem;
+    padding: 2rem;
+    color: #2C2E43;
+}
+.Card{
+    display: flex;
+}
+.book{
+    flex: 1;
+    background-color: #595260;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+.Card .book{
+    text-align: center;
+}
+.Card .book .bookImg img{
+    padding: 1rem;
+    height: 25rem;
+}
+.book .bookName{
+    font-size: 2rem;
+    color: #B2B1B9;
+}
