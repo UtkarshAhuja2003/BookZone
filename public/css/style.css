@@ -158,6 +158,16 @@ label{
     border: 1px solid lightgrey;
     border-radius: 0.5rem;
 }
+input{
+    width: 100%;
+    margin: 0.2rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+    padding: 8px;
+    font-size: 1.2rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+}
 #head{
     display: block;
     margin-left: auto;
