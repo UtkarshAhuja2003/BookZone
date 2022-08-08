@@ -39,24 +39,391 @@
 
 
 
-<div class="">
-    <div <style media="screen">
-      top : 200px;
-    </style>>
-      <h1>Admin</h1>
-      <a href="/loginAdmin"><button type="button" name="button">Admin</button></a>
-    </div>
-    <div>
-      <h1>Student</h1>
-      <a href="/loginStudent"><button type="button" name="button">Student</button></a>
-    </div>
-</div>
+<section class="homepage">
+  <div class="container1">
+      <div class="studentContainer container2">
+          <div class="titleH">
+              <label>STUDENT</label>
+          </div>
+          <div class="photoH">
+              <img class="imageH" src="/public/uploads/book/admin.png" alt="">
+          </div>
+          <div class="buttonH">
+             <a href="loginStudent"><button class="butH">Log in</button></a>
+          </div>
+          
+      </div>
+      <div class="adminContainer container2">
+          <div class="titleH">
+              <label>ADMIN</label>
+          </div>
+          <div class="photoH">
+              <img class="imageH" src="/public/uploads/book/admin.png" alt="">
+          </div>
+          <div class="buttonH">
+            <a href="loginAdmin"><button class="butH">Log in</button></a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="carousel">
+  <div class="slider">
+      <div class="slides">
+          <input type="radio" name="radioBtn" id="radio1">
+          <input type="radio" name="radioBtn" id="radio2">
+          <input type="radio" name="radioBtn" id="radio3">
+          <input type="radio" name="radioBtn" id="radio4">
+
+          <div class="slide slide1">
+              <span class="p">“A mind needs books as a sword needs a whetstone, if it is to keep its edge.”
+                  <div>― George R.R. Martin</div>
+              </span>
+              <img src="/public/uploads/book/got.jpeg" alt="">
+          </div>
+
+          <div class="slide slide2">
+              <span class="p">“Who you are is defined by what you are willing to struggle for.”
+                  <div>― Mark Manson</div>
+              </span>
+              <img src="/public/uploads/book/subtlr.jpeg" alt="">
+          </div>
+
+          <div class="slide slide3">
+              <span class="p">“But if thought corrupts language, language can also corrupt thought.”
+                  <div>― George Orwell</div>
+              </span>
+              <img src="/public/uploads/book/1984.jpeg" alt="">
+          </div>
+
+          <div class="slide slide4">
+              <span class="p">“People like to invent monsters and monstrosities. Then they seem less monstrous themselves.”
+                  <div>― Andrzej Sapkowski</div>
+              </span>
+              <img src="/public/uploads/book/Last.jpeg" alt="">
+          </div>
+
+          <div class="navigationAuto">
+              <div class="autoBtn1"></div>
+              <div class="autoBtn2"></div>
+              <div class="autoBtn3"></div>
+              <div class="autoBtn4"></div>
+          </div>
+      </div>
+
+      <div class="navigationManual">
+          <label for="radio1" class="manualBtn"></label>
+          <label for="radio2" class="manualBtn"></label>
+          <label for="radio3" class="manualBtn"></label>
+          <label for="radio4" class="manualBtn"></label>
+      </div>
+
+  </div>
+</section>
 
 
-<!-- 
-<% for(var i=0;i<items.length;i++){%>
-  <!-- <img src="/public/uploads/<%= items[i].book.img %>" alt="image"> -->
-  <%=items[i].schoolid%>
-<%}%> -->
+<section class="school">
+  <div class="box1">
+      <div class="sklName">
+          <p>Indian Institute of Technology Delhi</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/quantum.jpeg" alt=""></div>
+              <div class="bookName">The Quantum Labyrinth</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/storm.jpeg" alt=""></div>
+              <div class="bookName">A Storm of Swords</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/atomic.jpeg" alt=""></div>
+              <div class="bookName">Atomic Habits</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/azkaban.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Prisoner of Azkaban</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/rich.jpeg" alt=""></div>
+              <div class="bookName">Rich Dad Poor Dad</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/sapiens.jpeg" alt=""></div>
+              <div class="bookName">A Brief History Of Humankind</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>California Institute of Technology</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/chamber.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Chamber of Secrets</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/cok.jpeg" alt=""></div>
+              <div class="bookName">A Clash of Kings</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/got.jpeg" alt=""></div>
+              <div class="bookName">A Game of Thrones</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/half blood.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Half Blood Prince</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/subtle.png" alt=""></div>
+              <div class="bookName">The Subtle Art Of Not Giving A F*ck</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/martian.jpeg" alt=""></div>
+              <div class="bookName">The Martian</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>Delhi Central Library</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/quantum.jpeg" alt=""></div>
+              <div class="bookName">The Quantum Labyrinth</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/storm.jpeg" alt=""></div>
+              <div class="bookName">A Storm of Swords</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/atomic.jpeg" alt=""></div>
+              <div class="bookName">Atomic Habits</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/azkaban.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Prisoner of Azkaban</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/rich.jpeg" alt=""></div>
+              <div class="bookName">Rich Dad Poor Dad</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/dark.jpeg" alt=""></div>
+              <div class="bookName">Star Wars Dark Force Rising</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>Delhi Public School</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hc.jpeg" alt=""></div>
+              <div class="bookName">Concepts of Physics</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/storm.jpeg" alt=""></div>
+              <div class="bookName">A Storm of Swords</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/atomic.jpeg" alt=""></div>
+              <div class="bookName">Atomic Habits</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/azkaban.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Prisoner of Azkaban</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/subtle.png" alt=""></div>
+              <div class="bookName">The Subtle Art Of Not Giving A F*ck</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/sapiens.jpeg" alt=""></div>
+              <div class="bookName">A Brief History Of Humankind</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>Princeton University</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/quantum.jpeg" alt=""></div>
+              <div class="bookName">The Quantum Labyrinth</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/storm.jpeg" alt=""></div>
+              <div class="bookName">A Storm of Swords</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/atomic.jpeg" alt=""></div>
+              <div class="bookName">Atomic Habits</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/azkaban.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Prisoner of Azkaban</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/rich.jpeg" alt=""></div>
+              <div class="bookName">Rich Dad Poor Dad</div>
+          </div>
+          
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>Maharaja Surajmal Institute Of Technology</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/chamber.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Chamber of Secrets</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/subtle.png" alt=""></div>
+              <div class="bookName">The Subtle Art Of Not Giving A F*ck</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/azkaban.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Prisoner of Azkaban</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/rich.jpeg" alt=""></div>
+              <div class="bookName">Rich Dad Poor Dad</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/sapiens.jpeg" alt=""></div>
+              <div class="bookName">A Brief History Of Humankind</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="box1">
+      <div class="sklName">
+          <p>Dr. Akhilesh Das Gupta Institute of Technology & Management</p> 
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/rich.jpeg" alt=""></div>
+              <div class="bookName">Rich Dad Poor Dad</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/storm.jpeg" alt=""></div>
+              <div class="bookName">A Storm of Swords</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/chamber.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Chamber of Secrets</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hail.jpeg" alt=""></div>
+              <div class="bookName">Project Hail Mary</div>
+          </div>
+      </div>
+      <div class="books Card">
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/hp.jpeg" alt=""></div>
+              <div class="bookName">Harry Potter and the Socerers Stone</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/subtle.png" alt=""></div>
+              <div class="bookName">The Subtle Art Of Not Giving A F*ck</div>
+          </div>
+          <div class="book">
+              <div class="bookImg"><img src="/public/uploads/bookCard/sapiens.jpeg" alt=""></div>
+              <div class="bookName">A Brief History Of Humankind</div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+<script type="text/javascript">
+  var counter = 1;
+  setInterval(function(){
+      document.getElementById("radio"+counter).checked = true;
+      counter++;
+      if(counter>4){
+          counter = 1;
+      }
+  }, 4000);
+</script>
 
 <%- include('../partials/footer.ejs') %>
