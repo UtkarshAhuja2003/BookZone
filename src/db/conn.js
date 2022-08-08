@@ -1,7 +1,8 @@
 const mongoose =require("mongoose")
 
+const DB ="mongodb+srv://ahuja_utkarsh:utkarsh@cluster0.y6holyz.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect("mongodb://localhost:27017/registration",{
+mongoose.connect(DB,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{

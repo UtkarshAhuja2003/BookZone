@@ -4,7 +4,31 @@ const jwt=require("jsonwebtoken")
 
 
 const uploadbookSchema=new mongoose.Schema({
-  bookname: {
+  // bookname: {
+  //   type: "string",
+  //   required: true,
+  // },
+  // bookid: {
+  //   type: "string",
+  //   required: true,
+  // },
+  schoolid : {
+    type: "string",
+    required : true
+  },
+  // quantity : {
+  //   type: "number",
+  //   required : true
+  // },
+  // image:[{
+    
+  //  img:{
+  //     type:String,
+  //   },
+    
+  // }]
+  book:[{
+     bookname: {
     type: "string",
     required: true,
   },
@@ -12,18 +36,16 @@ const uploadbookSchema=new mongoose.Schema({
     type: "string",
     required: true,
   },
-  schoolid : {
-    type: "string",
-    required : true
-  },
-  quantity : {
+   quantity : {
     type: "number",
     required : true
   },
-  img :
-    {
-        type: "string",
-    }
+  img:{
+    type:String
+  },
+    
+  }]
+    
 })
 
 const Uploadbook=new mongoose.model("Uploadbook",uploadbookSchema)

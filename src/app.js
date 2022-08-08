@@ -57,17 +57,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single('image');
 
-app.get('/images', (req, res) => {
-    Uploadbooks.find({}, (err, items) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send('An error occurred', err);
-        }
-        else {
-            res.render('images', { items: items });
-        }
-    });
-});
+
 
 app.get("/",(req,res)=>{
    res.render("index")
@@ -95,30 +85,31 @@ app.get("/about",(req,res)=>{
 
 app.post("/uploadBook", upload, async(req,res)=>{
   try {
-    const book = new Uploadbooks({
-      bookname : req.body.bookname,
-      bookid :req.body.bookid,
-      schoolid : req.body.schoolid,
-      quantity :req.body.quantity,
-      filename : req.file.filename,
-      img : req.file.filename,
-    })
+    const book1={
+        bookname:req.body.bookname,
+        bookid:req.body.bookid,
+        quantity:req.body.quantity,
+        img:req.file.filename,
+    }
+    const id=await Uploadbooks.findOne({schoolid:req.body.schoolid})
+    if(!id){
+        console.log("bye");
+        const booknew = new Uploadbooks({
+      schoolid:req.body.schoolid,
+      book:book1
+    });
+    const books=await booknew.save()
 
-    const uploadbooks = await book.save()
-    // var obj = {
-    //     img: {
-    //         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-    //         contentType: 'image/png'
-    //     }
-    // }
-    // Uploadbooks.create(obj, (err, item) => {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    //     else {
-    //         // item.save();
-    //     }
-    // });
+    }
+    else{
+        console.log("hello")
+        // console.log(req.body.studentDateReturned);
+        // if(req.body.studentDateReturned==''){
+            // id.schoolid=req.body.schoolid
+           id.book=id.book.concat(book1)
+             const books = await id.save();
+        // }
+    }
             res.render("uploadBook")
   } catch (e) {
     console.log(e);
